@@ -1,0 +1,29 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #2196f3;
+  --primary-color-light: #e3f2fd;
+  --primary-color-dark: #195a8b;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Titillium Web', sans-serif;
+  // background-color: aliceblue;
+  // background-image: url(../../Img/theme/beanstalk_con.webp);
+}
+
+//

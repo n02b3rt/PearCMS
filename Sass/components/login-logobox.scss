@@ -1,0 +1,31 @@
+.logobox {
+  &__image {
+    height: 20vw;
+
+    // width: 5rem;
+  }
+  &__caption {
+    font-size: xx-large;
+    font-weight: 200;
+    line-height: 1;
+    text-align: center;
+    font-size: 2vw;
+    &--main {
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 5vw;
+      letter-spacing: 3.5rem;
+      margin-left: 3.5rem;
+
+      @supports (background-clip: text) OR (-webkit-background-clip: text) {
+        background-image: url(../Img/theme/low-poly-grid-haikei.svg);
+        background-clip: text;
+        background-size: cover;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      color: #111;
+    }
+  }
+}

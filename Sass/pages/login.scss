@@ -1,0 +1,29 @@
+.login__content {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  background-size: cover;
+  overflow: hidden;
+
+  & > * {
+    @include center();
+  }
+
+  &--logobox {
+    background-color: #fff;
+    height: 100vh;
+    box-shadow: 0 0 4rem rgba($color: #fff, $alpha: 0.5);
+    z-index: 20;
+    flex-direction: column;
+  }
+  &--form {
+    background-image: linear-gradient(rgba(#000, 0.35), rgba(#000, 0.35)),
+      url(../Img/theme/low-poly-grid-haikei-light.svg);
+    background-size: cover;
+    z-index: 10;
+    scale: 1.1;
+  }
+}
