@@ -1,38 +1,29 @@
-.header {
-  width: 100%;
-  height: 8rem;
-  background-color: white;
-  box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.25);
+.home__header {
+  @include center;
+}
+.home__header > .logobox {
+  &__image {
+    height: 20vw;
 
-  display: grid;
-  grid-template-columns: minmax(5rem, 10%) repeat(3, minmax(max-content, 1fr)) minmax(
-      5rem,
-      10%
-    );
-  grid-column-gap: 5rem;
-  justify-content: center;
-  align-items: center;
-  &__logo {
-    width: 9rem;
-    height: 8rem;
+    // width: 5rem;
   }
+  &__caption {
+    font-weight: 200;
+    font-size: 2vw;
+    &--main {
+      font-size: 10vw;
+      letter-spacing: 3.5rem;
+      margin-left: 3.5rem;
 
-  &__paragrap {
-    text-transform: capitalize;
-    font-size: xx-large;
-  }
+      @supports (background-clip: text) OR (-webkit-background-clip: text) {
+        background-image: url(../Img/theme/low-poly-grid-haikei.svg);
+        background-clip: text;
+        background-size: cover;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
 
-  &__widget {
-    &-1 {
-      font-size: 1rem;
-      grid-column: 2/3;
-    }
-    &-2 {
-      font-size: 1rem;
-    }
-    &-3 {
-      grid-column: 4/5;
-      justify-self: right;
+      color: #111;
     }
   }
 }
