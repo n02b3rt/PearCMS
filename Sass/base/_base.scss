@@ -27,3 +27,21 @@ body {
 }
 
 //
+
+.err {
+  // margin-bottom: 0.5rem;
+  &__register {
+    // margin-left: 3rem;
+    color: red;
+    margin-top: 3px;
+    margin-bottom: 1rem;
+    & ul {
+      list-style: none;
+    }
+  }
+  & > input[type='password'],
+  & > input[type='text'] {
+    background-color: rgba(red, $alpha: 0.25);
+    border-bottom: 3px solid red;
+  }
+}

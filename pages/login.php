@@ -36,12 +36,8 @@
         </div>
         <div class="login__content--form">
             <?php
-    if(isset($_GET['register']) || isset($_GET['register'])){
-     
-        if( $_GET['register'] == '' || $_GET['register'] == 'fail' )  
-        include '../components/register-form.php';
-       
-    }
+    if( isset($_GET['register']))  
+    include '../components/register-form.php';
     else include '../components/login-form.php';
             ?>
         </div>
@@ -49,19 +45,58 @@
     </div>
     <?php
 
+    if(isset($_GET['register'])){
+        echo $_GET['register'];
+        echo $_GET['login'];
+        echo '<script>
+        const input = document.querySelectorAll(".input__container");
+        let element = "";
+        </script>';
+
+        // hasła podane przy rejestracji są różne 
+        if($_GET['register'] == 'fail'){
+            //<div class='err__register'><p>Podane hasła są różne</p></div>
+            echo '<script>
+            element = `<div class="err__register"><p>Podane hasła są różne</p></div>`
+            input[1].innerHTML += element;
+            input[1].classList.add("err");
+            input[2].classList.add("err");
+            </script>';
+        }
+
+        // podany login jest zły mają być male litery cyfry opcjonalnie "_" lub "-"
+        if($_GET['login'] == 'fail'){
+            echo '<script>
+            element = `<div class="err__register "><p>Login może zawierac jedynie: małe litery, cyfery oraz znaki "-" i "_" </p></div>`
+            input[0].innerHTML += element;
+            input[0].classList.add("err");
+            </script>';
+        }
+
+        // nie ma połączenia z baza!
+        if($_GET['register'] == 'failbaseconnect'){
+
+        }
+
+        // bład zapytania
+        if($_GET['register'] == 'failquery'){
+
+        }
+    }
     //   niedziala jeszcze 
 //    if(isset($_GET['page'])){
 //     if($_GET['page'] == 'register-fail' ) echo "<script src='../scripts/javascript/password_fail_login.js''></script>";
 // }
-if(isset($_GET['login']) || isset($_GET['register'] )){
-    if($_GET['login'] == 'fail' )
-    echo '<script>
-    const input = document.querySelector("input");
-    input.style = "border-bottom-color: red; ";
-</script>';
+// if(isset($_GET['login']) || isset($_GET['register'] )){
+//     if($_GET['login'] == 'fail' )
+//     echo '<script>
+//     const input = document.querySelector("input");
+//     input.style = "border-bottom-color: red; ";
+// </script>';
 // if($_GET['register'] == 'fail' ) echo "<script src='../scripts/javascript/password_fail_login.js''></script>";
-}
-    else echo $_GET['login'];
+// }
+//     else echo $_GET['login'];
+
     ?>
 </body>
 
