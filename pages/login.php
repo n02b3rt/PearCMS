@@ -36,13 +36,32 @@
         </div>
         <div class="login__content--form">
             <?php
-            include '../components/login-form.php';
+    if(isset($_GET['register']) || isset($_GET['register'])){
+     
+        if( $_GET['register'] == '' || $_GET['register'] == 'fail' )  
+        include '../components/register-form.php';
+       
+    }
+    else include '../components/login-form.php';
             ?>
         </div>
 
     </div>
     <?php
-    // walidacja logowania
+
+    //   niedziala jeszcze 
+//    if(isset($_GET['page'])){
+//     if($_GET['page'] == 'register-fail' ) echo "<script src='../scripts/javascript/password_fail_login.js''></script>";
+// }
+if(isset($_GET['login']) || isset($_GET['register'] )){
+    if($_GET['login'] == 'fail' )
+    echo '<script>
+    const input = document.querySelector("input");
+    input.style = "border-bottom-color: red; ";
+</script>';
+// if($_GET['register'] == 'fail' ) echo "<script src='../scripts/javascript/password_fail_login.js''></script>";
+}
+    else echo $_GET['login'];
     ?>
 </body>
 

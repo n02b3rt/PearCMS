@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 14 Lis 2022, 22:40
--- Wersja serwera: 10.4.24-MariaDB
--- Wersja PHP: 8.1.6
+-- Czas generowania: 15 Lis 2022, 12:05
+-- Wersja serwera: 10.4.22-MariaDB
+-- Wersja PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -55,6 +55,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
+-- Zrzut danych tabeli `users`
+--
+
+INSERT INTO `users` (`id`, `login`, `haslo`, `user`) VALUES
+(3, 'norek', 'cbfad02f9ed2a8d1e08d8f74f5303e9eb93637d47f82ab6f1c15871cf8dd0481', 'admin');
+
+--
 -- Indeksy dla zrzutów tabel
 --
 
@@ -72,7 +79,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
