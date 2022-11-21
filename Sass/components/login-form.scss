@@ -11,6 +11,15 @@
   background: #ffffff;
   box-shadow: 0 2rem 4rem rgba($color: #fff, $alpha: 0.25);
   // box-shadow: inset 5px 5px 10px #adadad, inset -5px -5px 10px #ffffff;
+  a:link,
+  a:visited {
+    color: #222;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  a:hover {
+    color: var(--primary-color);
+  }
 }
 .input {
   &__container {

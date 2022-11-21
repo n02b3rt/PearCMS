@@ -1,0 +1,50 @@
+.dashboard__menu {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: minmax(5rem, max-content);
+  grid-gap: 1rem;
+  align-content: start;
+  align-items: center;
+  list-style: none;
+  & > li {
+    // background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    width: 100%;
+
+    font-size: 2rem;
+    // border: 1px solid whitesmoke;
+    // border-top: 1px solid rgb(206, 206, 206);
+
+    & > * {
+      padding: 0 4rem;
+    }
+    & > ul {
+      & > * {
+        padding: 0.5rem 0;
+      }
+      box-shadow: inset 0 0 1rem rgba($color: #000, $alpha: 0.1);
+    }
+  }
+  & a {
+    &:link,
+    &:visited {
+      color: #222;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+}
+
+.submenu {
+  width: calc(100%-4rem);
+
+  list-style: none;
+  background: rgb(245, 245, 245);
+}

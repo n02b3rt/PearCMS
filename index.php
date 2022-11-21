@@ -27,15 +27,12 @@
     <!-- content -->
     <main class="home">
         <?php  include 'components/home/header.php'?>
-
-        <!-- <?php include 'components/home/content.php`'?> -->
-
+        <!-- <?php include 'components/home/posts.php'?> -->
 
     </main>
-
-    <!--  -->
-
-    <!-- <?php include 'components/starter.php'?> -->
+    <div class="aticles">
+        <?php include "scripts/php/hove_show_entries.php"?>
+    </div>
 </body>
 
 </html>

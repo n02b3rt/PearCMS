@@ -5,11 +5,11 @@
         <label>Login</label>
     </div>
     <div class="input__container">
-        <input type="password" name= 'password' required />
+        <input type="password" name='password' required />
         <label for='password'>Password</label>
     </div>
     <div class="input__container">
-        <input type="password" name='repassword'  required />
+        <input type="password" name='repassword' required />
         <label for='repassword'>Repassword</label>
     </div>
     <button type="submit" class="btn btn--login">Załóż</button>

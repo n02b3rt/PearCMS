@@ -9,6 +9,9 @@
 @import 'components/buttons.scss';
 @import 'components/login-form.scss';
 @import 'components/login-logobox.scss';
+@import 'components/dashboard-menu.scss';
+@import 'components/dashboard-home.scss';
+@import 'components/home-article.scss';
 
 @import 'layout/footer';
 @import 'layout/header';
@@ -17,3 +20,4 @@
 
 @import 'pages/home.scss';
 @import 'pages/login.scss';
+@import 'pages/dashboard.scss';

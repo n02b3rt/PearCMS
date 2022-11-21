@@ -28,7 +28,7 @@
     else {
       // baza nic nie zwróciła
       echo 'nie dziala ';
-      header("LOCATION:../../pages/login.php?login=fail");
+      header("LOCATION:../../pages/login.php?user=not-found");
       exit();
     }
 
