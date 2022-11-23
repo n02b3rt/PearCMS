@@ -1,7 +1,6 @@
 <?php 
-// TODO Logim MAX 20 znaków
  function test_login($login){
-  if(preg_match('/^[a-z0-9_-]*$/', $login)) return 1;
+  if(preg_match('/^[a-z0-9_-]*$/', $login) && strlen($login) <= 20) return 1;
   return 0;
  }
  function test_password($password, $repassword){

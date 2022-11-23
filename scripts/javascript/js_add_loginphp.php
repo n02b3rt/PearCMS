@@ -33,7 +33,7 @@
         // podany login jest zły mają być male litery cyfry opcjonalnie "_" lub "-"
         if(isset($_GET['login']) && $_GET['login'] == 'fail'){
             echo '<script>
-            element = `<div class="err__register "><p>Login może zawierac jedynie: małe litery, cyfery oraz znaki "-" i "_" </p></div>`
+            element = `<div class="err__register "><p>Login może zawierac jedynie: małe litery, cyfery oraz znaki "-" i "_" i maksymalnie 20 znaków </p></div>`
             input[0].innerHTML += element;
             input[0].classList.add("err");
             </script>';

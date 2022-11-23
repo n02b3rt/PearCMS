@@ -20,6 +20,7 @@
     <title><?php echo $_SESSION['title']?></title>
     <link rel="shortcut icon" href="<?php echo $_SESSION['favicon']?>" />
 
+    <script src="scripts/javascript/content_shortening.js" defer></script>
 </head>
 
 <body>
@@ -34,5 +35,4 @@
         <?php include "scripts/php/hove_show_entries.php"?>
     </div>
 </body>
-
 </html>
