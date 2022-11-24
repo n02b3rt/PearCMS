@@ -20,10 +20,11 @@
     if($result && mysqli_num_rows($result)==1){
       $row = mysqli_fetch_assoc($result);
       session_start();
-      $_SESSION['login'] = $row['haslo'];
+      $_SESSION['login'] = $row['login'];
       $_SESSION['password'] = $row['haslo'];
       $_SESSION['permission'] = $row['user'];
-      header("LOCATION:../../pages/dashboard.php");
+      $_SESSION['id'] = $row['id'];
+      header("LOCATION:../../index.php");
     }
     else {
       // baza nic nie zwróciła

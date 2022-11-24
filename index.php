@@ -31,8 +31,16 @@
         <!-- <?php include 'components/home/posts.php'?> -->
 
     </main>
+    <?php 
+    if(isset($_SESSION['login']) && isset($_SESSION['password']) && isset($_SESSION['permission']) && isset($_SESSION['id'])){
+        include 'components/home/add-post.php';
+    }
+    
+    ?>
     <div class="aticles">
-        <?php include "scripts/php/hove_show_entries.php"?>
+        Posts
+        <?php include 'scripts/php/home_show_entries.php'?>
     </div>
 </body>
+
 </html>

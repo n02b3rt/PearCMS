@@ -1,0 +1,105 @@
+.wrapper-post {
+  display: grid;
+  justify-content: center;
+}
+.add-post {
+  display: grid;
+  grid-template-columns: minmax(10rem, 20rem) minmax(10rem, 50rem);
+  grid-template-rows: auto 5rem;
+  min-height: 10rem;
+  width: 70rem;
+  margin-bottom: 50rem;
+  padding: 0 1rem;
+  border-radius: 15px;
+  overflow: hidden;
+  //
+  background: rgba(255, 255, 255, 0.36);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+
+  &__profil {
+    display: grid;
+    align-content: center;
+    height: 13rem;
+    grid-template-rows: min-content min-content;
+    justify-content: center;
+    &__photo {
+      background-color: red;
+      justify-self: center;
+      height: 7rem;
+      width: 7rem;
+      border-radius: 50%;
+    }
+    &__name {
+      font-size: 2rem;
+      text-align: center;
+      text-transform: capitalize;
+    }
+  }
+
+  &__bottom-bar {
+    grid-column: 1/-1;
+    grid-template-columns: 1fr minmax(5rem, 10rem) max-content;
+    grid-column-gap: 2rem;
+    display: grid;
+    justify-items: end;
+    & > input[type='submit'] {
+      padding: 0.25rem 3rem;
+      background-color: var(--primary-color);
+      color: white;
+      font-size: 1.8rem;
+      font-weight: 600;
+      border-radius: 50px;
+      //   margin-right: 2rem;
+      margin-bottom: 1rem;
+    }
+    & > input[type='text'] {
+      background-color: transparent;
+      border: none;
+      &:focus,
+      &:focus-visible {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+
+  &__grow-wrap {
+    display: grid;
+    grid-template-rows: min-content;
+    align-content: center;
+    border: none;
+    font-size: 2rem;
+
+    &::after {
+      content: attr(data-replicated-value) ' ';
+      white-space: pre-wrap;
+      visibility: hidden;
+    }
+
+    & > textarea {
+      resize: none;
+      overflow: hidden;
+      &:focus-visible,
+      &#text:focus-visible {
+        outline: none !important;
+        border: none;
+      }
+    }
+    & > textarea,
+    &::after {
+      border: none;
+      padding: 0.5rem;
+      font: inherit;
+      grid-area: 1 / 1 / 2 / 2;
+    }
+
+    & textarea {
+      min-height: 100%;
+      resize: none;
+      font-size: 2rem;
+    }
+  }
+}

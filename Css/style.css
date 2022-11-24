@@ -364,6 +364,87 @@ span.text-login {
     scale: 1.1;
     color: var(--primary-color-dark); }
 
+.wrapper-post {
+  display: grid;
+  justify-content: center; }
+
+.add-post {
+  display: grid;
+  grid-template-columns: minmax(10rem, 20rem) minmax(10rem, 50rem);
+  grid-template-rows: auto 5rem;
+  min-height: 10rem;
+  width: 70rem;
+  margin-bottom: 50rem;
+  padding: 0 1rem;
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.36);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px); }
+  .add-post__profil {
+    display: grid;
+    align-content: center;
+    height: 13rem;
+    grid-template-rows: min-content min-content;
+    justify-content: center; }
+    .add-post__profil__photo {
+      background-color: red;
+      justify-self: center;
+      height: 7rem;
+      width: 7rem;
+      border-radius: 50%; }
+    .add-post__profil__name {
+      font-size: 2rem;
+      text-align: center;
+      text-transform: capitalize; }
+  .add-post__bottom-bar {
+    grid-column: 1/-1;
+    grid-template-columns: 1fr minmax(5rem, 10rem) max-content;
+    grid-column-gap: 2rem;
+    display: grid;
+    justify-items: end; }
+    .add-post__bottom-bar > input[type='submit'] {
+      padding: 0.25rem 3rem;
+      background-color: var(--primary-color);
+      color: white;
+      font-size: 1.8rem;
+      font-weight: 600;
+      border-radius: 50px;
+      margin-bottom: 1rem; }
+    .add-post__bottom-bar > input[type='text'] {
+      background-color: transparent;
+      border: none; }
+      .add-post__bottom-bar > input[type='text']:focus, .add-post__bottom-bar > input[type='text']:focus-visible {
+        border: none;
+        outline: none; }
+  .add-post__grow-wrap {
+    display: grid;
+    grid-template-rows: min-content;
+    align-content: center;
+    border: none;
+    font-size: 2rem; }
+    .add-post__grow-wrap::after {
+      content: attr(data-replicated-value) " ";
+      white-space: pre-wrap;
+      visibility: hidden; }
+    .add-post__grow-wrap > textarea {
+      resize: none;
+      overflow: hidden; }
+      .add-post__grow-wrap > textarea:focus-visible, .add-post__grow-wrap > textarea#text:focus-visible {
+        outline: none !important;
+        border: none; }
+    .add-post__grow-wrap > textarea, .add-post__grow-wrap::after {
+      border: none;
+      padding: 0.5rem;
+      font: inherit;
+      grid-area: 1 / 1 / 2 / 2; }
+    .add-post__grow-wrap textarea {
+      min-height: 100%;
+      resize: none;
+      font-size: 2rem; }
+
 .home__header {
   display: flex;
   justify-content: center;
