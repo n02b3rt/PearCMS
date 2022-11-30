@@ -19,7 +19,7 @@ $db = mysqli_connect('localhost','root','','cms');
 if(!$db){
   // nie dziala baza
   header('LOCATION:../../index.php');
-  exit();
+  exit();  
 }
 
 $query = "INSERT INTO entries(categories, content, id_autor, date) VALUES ('$category','$content','$autor_id','$Cur_DATE')";
@@ -30,6 +30,6 @@ if(!$result = mysqli_query($db, $query)){
     header('LOCATION:../../index.php');
     exit();
 }
-header('LOCATION:../../index.php');
+header("LOCATION:../../index.php?profil={$_GET['profil']}");
 //dodano
 ?>

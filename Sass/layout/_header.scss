@@ -1,19 +1,20 @@
 .home__header {
   @include center;
+  flex-direction: column;
 }
 .home__header > .logobox {
   &__image {
-    height: 20vw;
+    height: 10vh;
 
     // width: 5rem;
   }
   &__caption {
     font-weight: 200;
-    font-size: 2vw;
+    font-size: 1vw;
     &--main {
-      font-size: 10vw;
-      letter-spacing: 3.5rem;
-      margin-left: 3.5rem;
+      font-size: 2rem !important;
+      letter-spacing: 1rem;
+      margin-left: 1rem;
 
       @supports (background-clip: text) OR (-webkit-background-clip: text) {
         background-image: url(../Img/theme/low-poly-grid-haikei.svg);

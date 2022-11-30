@@ -3,12 +3,13 @@
   justify-content: center;
 }
 .add-post {
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: minmax(10rem, 20rem) minmax(10rem, 50rem);
   grid-template-rows: auto 5rem;
   min-height: 10rem;
   width: 70rem;
-  margin-bottom: 50rem;
+  margin-bottom: 5rem;
   padding: 0 1rem;
   border-radius: 15px;
   overflow: hidden;
@@ -19,12 +20,22 @@
   backdrop-filter: blur(8.5px);
   -webkit-backdrop-filter: blur(8.5px);
 
+  @media only screen and (max-width: 42.75em) {
+    width: 100%;
+    grid-template-columns: minmax(10rem, 50rem);
+    grid-template-rows: 1fr min-content;
+  }
+
   &__profil {
     display: grid;
     align-content: center;
     height: 13rem;
     grid-template-rows: min-content min-content;
     justify-content: center;
+    @media only screen and (max-width: 42.75em) {
+      display: none;
+      visibility: hidden;
+    }
     &__photo {
       background-color: red;
       justify-self: center;
@@ -36,6 +47,10 @@
       font-size: 2rem;
       text-align: center;
       text-transform: capitalize;
+      @media only screen and (max-width: 42.75em) {
+        display: none;
+        visibility: hidden;
+      }
     }
   }
 
@@ -45,15 +60,8 @@
     grid-column-gap: 2rem;
     display: grid;
     justify-items: end;
-    & > input[type='submit'] {
-      padding: 0.25rem 3rem;
-      background-color: var(--primary-color);
-      color: white;
-      font-size: 1.8rem;
-      font-weight: 600;
-      border-radius: 50px;
-      //   margin-right: 2rem;
-      margin-bottom: 1rem;
+    @media only screen and (max-width: 42.75em) {
+      grid-row: 2/3;
     }
     & > input[type='text'] {
       background-color: transparent;
@@ -72,6 +80,9 @@
     align-content: center;
     border: none;
     font-size: 2rem;
+    @media only screen and (max-width: 42.75em) {
+      grid-row: 1/2;
+    }
 
     &::after {
       content: attr(data-replicated-value) ' ';

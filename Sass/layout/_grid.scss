@@ -1,0 +1,19 @@
+body {
+  display: grid;
+  grid-template-columns:
+    [sidebar-start] minmax(25rem, 30rem) [sidebar-end]
+    1fr
+    [content-start] minmax(73rem, max-content) [content-end]
+    1fr
+    [idk-start] minmax(10rem, 20rem) [idk-end];
+  grid-gap: 1rem;
+
+  @media only screen and (max-width: 62.5em) {
+    grid-template-columns:
+      1fr
+      [content-start] minmax(100vw, max-content) [content-end]
+      1fr;
+    grid-gap: 0rem;
+  }
+  // 45.25em
+}

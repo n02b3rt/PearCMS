@@ -4,7 +4,6 @@
 @import 'base/animation';
 @import 'base/base';
 @import 'base/typography';
-@import 'base/utilities';
 
 @import 'components/buttons.scss';
 @import 'components/login-form.scss';
@@ -14,6 +13,9 @@
 @import 'components/dahboard-add-entry.scss';
 @import 'components/home-article.scss';
 @import 'components/home-add-post.scss';
+@import 'components/profile-main.scss';
+@import 'components/profile-edit-window.scss';
+@import 'components/mobile-menu.scss';
 
 @import 'layout/footer';
 @import 'layout/header';

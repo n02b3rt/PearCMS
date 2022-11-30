@@ -1,0 +1,53 @@
+.mobile {
+  &-Menu {
+    display: none;
+    @media only screen and (min-width: 62.5em) {
+      display: none;
+    }
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 7rem;
+    width: 7rem;
+    background-color: white;
+    border-radius: 50%;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000000000;
+    box-shadow: 0 1rem 3rem rgba($color: #000000, $alpha: 0.25);
+    &:hover {
+      box-shadow: 0 1rem 3rem rgba($color: #000000, $alpha: 0.35);
+    }
+
+    &__icon {
+      position: relative;
+      &,
+      &::before,
+      &::after {
+        width: 3rem;
+        height: 2px;
+        background-color: black;
+        display: inline-block;
+        transition: all 0.2s;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+      }
+
+      &::before {
+        top: -0.8rem;
+      }
+      &::after {
+        top: 0.8rem;
+      }
+    }
+  }
+}

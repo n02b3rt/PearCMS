@@ -1,7 +1,7 @@
-const input = document.querySelectorAll("input[type=password]");
+const input = document.querySelectorAll('input[type=password]');
 
-console.log("dziala");
+console.log('dziala');
 
 input.forEach((e) => {
-  e.style = "border-bottom-color: red; ";
+  e.style = 'border-bottom-color: red; ';
 });

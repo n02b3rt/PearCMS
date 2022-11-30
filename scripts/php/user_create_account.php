@@ -32,8 +32,14 @@ if(isset($_POST['login']) && isset($_POST['password']) && isset($_POST['repasswo
     $login = $_POST['login'];
     $pass = hash('sha256',$_POST['password']);
 
+    $db = mysqli_connect('localhost', 'root', '', 'cms');
+    if(!$db){
+      header("LOCATION:../../pages/login.php?register=base");
+      exit();
+    }
+
     $query = "INSERT INTO users( login, haslo, user) VALUES ('$login', '$pass','user')";
-    $result = mysqli_query(mysqli_connect('localhost', 'root', '', 'cms'),$query);
+    $result = mysqli_query($db,$query);
 
     if(!$result){
       // Dodawanie użytkownika zakończone niepowodzeniem
@@ -41,12 +47,19 @@ if(isset($_POST['login']) && isset($_POST['password']) && isset($_POST['repasswo
       exit();
     }
 
-    session_start();
-      $_SESSION['login'] = $login;
-      $_SESSION['password'] = $pass;
-      $_SESSION['permission'] = "user";
-    header("LOCATION:../../pages/dashboard.php");
-    mysqli_close($connect);
+    $query = "SELECT * FROM users WHERE login = '$login' AND haslo = '$pass'";
+    $result = mysqli_query($db,$query);
+    
+
+    if($result && mysqli_num_rows($result)==1){
+      $row = mysqli_fetch_assoc($result);
+      session_start();
+      $_SESSION['login'] = $row['login'];
+      $_SESSION['password'] = $row['haslo'];
+      $_SESSION['permission'] = $row['user'];
+      $_SESSION['id'] = $row['id'];
+      header("LOCATION:../../index.php");
+    }
 
   }
   else {

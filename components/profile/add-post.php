@@ -3,7 +3,7 @@
     $style = 'background-color:lightblue;'
 ?>
 <div class="wrapper-post">
-    <form action="scripts/php/home_add-post.php" method="post" class="add-post">
+    <form action="scripts/php/profil_add-post.php?profil=<?php echo $_GET['profil'] ?>" method="post" class="add-post">
         <div class="add-post__profil">
             <svg class="add-post__profil__photo" style="<?php echo $style?>">
                 <use xlink:href="img/icons/profile.svg#icon-user">

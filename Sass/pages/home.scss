@@ -1,4 +1,27 @@
-.home {
+// .idk-bar {
+//   grid-column: idk-start/idk-end;
+//   display: grid;
+//   justify-content: center;
+//   margin-top: 2rem;
+// }
+
+.content {
+  grid-column: content-start/content-end;
+  grid-row: 2/3;
+  margin-top: 3rem;
   display: grid;
-  grid-template-rows: 100vh;
+  justify-content: center;
+}
+
+.profile__header + .content {
+  margin-top: -7rem;
+}
+
+.main {
+  grid-row: 1/2 !important;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  & .wrapper-post {
+    min-height: 25rem !important;
+  }
 }

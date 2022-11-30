@@ -21,26 +21,49 @@
     <link rel="shortcut icon" href="<?php echo $_SESSION['favicon']?>" />
 
     <script src="scripts/javascript/content_shortening.js" defer></script>
+    <script src="scripts/javascript/menu.js" defer></script>
+    <?php if(isset($_GET['profil'])){
+        echo '<script src="scripts/javascript/profile-edit.js" defer></script>';
+        if(isset($_SESSION['login']) && $_GET['profil']==$_SESSION['login']){
+            echo '<script src="scripts/javascript/profile-edit-nick.js" defer></script>';
+        }
+    }?>
+
 </head>
 
 <body>
-    <?php include 'scripts/php/data_base_con.php'; ?>
-    <!-- content -->
-    <main class="home">
-        <?php  include 'components/home/header.php'?>
-        <!-- <?php include 'components/home/posts.php'?> -->
-
-    </main>
-    <?php 
-    if(isset($_SESSION['login']) && isset($_SESSION['password']) && isset($_SESSION['permission']) && isset($_SESSION['id'])){
-        include 'components/home/add-post.php';
-    }
-    
-    ?>
-    <div class="aticles">
-        Posts
-        <?php include 'scripts/php/home_show_entries.php'?>
+    <div class="mobile-Menu">
+        <span class="mobile-Menu__icon">&nbsp;</span>
     </div>
+    <?php include 'components/home/menu.php'?>
+
+    <?php
+
+        if(isset($_GET['profil']) && $_GET['profil'] != ""){
+            include 'scripts/php/profile_check_user.php';
+            echo '<div class="profile__header">';
+            include 'components/profile/profile-header.php';}
+            echo '</div>';
+        ?>
+    <div class="content<?php if(!isset($_GET['profil'])) echo " main";?>">
+        <?php
+            if(isset($_GET['profil']) && $_GET['profil'] != ""){
+                include 'pages/profile.php';
+                
+            }
+            else{
+                include 'pages/home.php';
+            }
+        ?>
+        <?php  ?>;
+    </div>
+
+    <div class="idk-bar">
+
+    </div>
+
+    <!-- //  -->
+
 </body>
 
 </html>

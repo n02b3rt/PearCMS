@@ -1,0 +1,15 @@
+.edit {
+  &__form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content min-content;
+    justify-content: end;
+    & > input[type='submit'] {
+      justify-self: end;
+      margin-top: 1rem;
+    }
+    & > textarea {
+      resize: vertical;
+    }
+  }
+}

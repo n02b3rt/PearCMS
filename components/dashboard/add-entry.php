@@ -1,4 +1,3 @@
-<!-- TODO ogarnąć formularz + walidacja go -->
 <?php
 $msg = "";
 $target = "img/".basename($_FILES['image']['name']);

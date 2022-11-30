@@ -13,7 +13,7 @@
 
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 body {
@@ -44,4 +44,45 @@ body {
     background-color: rgba(red, $alpha: 0.25);
     border-bottom: 3px solid red;
   }
+}
+
+input[type='submit'],
+.btn-profile {
+  padding: 0.25rem 3rem;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border-radius: 50px;
+  //   margin-right: 2rem;
+  margin-bottom: 1rem;
+  @media only screen and (max-width: 54.75em) {
+    padding: 0.25rem 1.5rem;
+  }
+  // @media only screen and (max-width: 20em) {
+  //   padding: 0.25rem 1.5rem;
+  // }
+}
+
+.show_more {
+  border: none;
+  font-size: 1.6rem;
+  margin-left: 0.5rem;
+  background-color: transparent;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--primary-color);
+  &:hover {
+    letter-spacing: 0;
+    font-weight: 600;
+  }
+}
+
+a:link,
+a:visited {
+  color: #222;
+  text-decoration: none;
+}
+
+textarea {
+  word-wrap: break-word !important;
 }

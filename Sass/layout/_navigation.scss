@@ -1,0 +1,56 @@
+.menu {
+  height: 100vh;
+  width: 30rem;
+  @media only screen and (max-width: 76.0625em) {
+    width: 25rem;
+  }
+  @media only screen and (max-width: 62.5em) {
+    display: none;
+  }
+
+  padding-top: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+
+  grid-template-rows: 17rem 5rem 1fr;
+
+  background: rgba(255, 255, 255, 0.59);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(9.6px);
+  -webkit-backdrop-filter: blur(9.6px);
+  border: 1px solid rgba(255, 255, 255, 1);
+
+  &--side {
+    list-style: none;
+
+    & li,
+    & > a {
+      width: calc(100%-5rem);
+      //   background-color: red;
+      text-decoration: none;
+      color: #222;
+      border-top: 1px solid rgb(225, 225, 225);
+    }
+
+    & li {
+      padding: 1.25rem 2.5rem;
+      font-size: 2.2rem;
+    }
+  }
+  & .link-logo {
+    justify-self: center;
+    & .logobox__image {
+      height: 12rem;
+    }
+  }
+
+  &__login {
+    text-decoration: none;
+    color: #222;
+    justify-self: center;
+    font-size: 2rem;
+  }
+}
